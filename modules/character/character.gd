@@ -47,7 +47,6 @@ func read_input():
 	velocity.y = direction.y * acceleration
 	
 	speed_change.emit(velocity.length())
-	print(position)
 	position_change.emit(position)
 
 	#print(direction, "\t", acceleration, "\t\t", velocity, "\t", theta)
