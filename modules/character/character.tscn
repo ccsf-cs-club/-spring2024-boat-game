@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ywhxryfusu4k"]
+
+[ext_resource type="Texture2D" uid="uid://0pg8bgeg0k16" path="res://modules/character/sprite8x8_boat.png" id="1_dhiru"]
+[ext_resource type="Script" path="res://modules/character/character.gd" id="2_os1ox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teu0x"]
+size = Vector2(10, 10)
+
+[node name="Character" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_os1ox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_teu0x")
+
+[node name="Sprite8x8Boat" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_dhiru")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(4, 4)
