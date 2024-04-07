@@ -1,17 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://be0drgbe0veus"]
-
-[ext_resource type="Texture2D" uid="uid://jukqmtrpv86p" path="res://modules/world/waterTileSheet.png" id="1_s7ijj"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxyh5"]
-texture = ExtResource("1_s7ijj")
-texture_region_size = Vector2i(8, 8)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
+[gd_scene load_steps=2 format=3 uid="uid://be0drgbe0veus"]
 
 [sub_resource type="TileSet" id="TileSet_omp5p"]
 tile_size = Vector2i(8, 8)
-sources/0 = SubResource("TileSetAtlasSource_uxyh5")
 
 [node name="World" type="Node2D"]
 

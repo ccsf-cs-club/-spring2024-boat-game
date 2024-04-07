@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ywhxryfusu4k"]
+[gd_scene load_steps=5 format=3 uid="uid://ywhxryfusu4k"]
 
 [ext_resource type="Texture2D" uid="uid://0pg8bgeg0k16" path="res://modules/character/sprite8x8_boat.png" id="1_dhiru"]
+[ext_resource type="PackedScene" uid="uid://7jqkg0dp81na" path="res://background.tscn" id="1_i0x33"]
 [ext_resource type="Script" path="res://modules/character/character.gd" id="2_os1ox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_teu0x"]
@@ -19,3 +20,5 @@ texture = ExtResource("1_dhiru")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(4, 4)
+
+[node name="ParallaxBackground" parent="CharacterBody2D" instance=ExtResource("1_i0x33")]

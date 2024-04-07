@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://7jqkg0dp81na"]
+
+[ext_resource type="Texture2D" uid="uid://jukqmtrpv86p" path="res://modules/world/waterTileSheet.png" id="1_ibq2k"]
+[ext_resource type="Script" path="res://background.gd" id="1_jafxt"]
+[ext_resource type="Texture2D" uid="uid://bfx32j71i5tq4" path="res://modules/back.png" id="2_xf4gp"]
+[ext_resource type="Texture2D" uid="uid://bjvr84msju67x" path="res://modules/world/sprite8x8_waterWave1.png" id="3_w6v8j"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_jafxt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(538, 310)
+scale = Vector2(2.556, 1.392)
+texture = ExtResource("2_xf4gp")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(250, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(5, -7)
+texture = ExtResource("3_w6v8j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(14, 11)
+texture = ExtResource("1_ibq2k")
