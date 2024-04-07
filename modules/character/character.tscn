@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ywhxryfusu4k"]
+[gd_scene load_steps=5 format=3 uid="uid://ywhxryfusu4k"]
 
 [ext_resource type="Texture2D" uid="uid://0pg8bgeg0k16" path="res://modules/character/sprite8x8_boat.png" id="1_dhiru"]
 [ext_resource type="Script" path="res://modules/character/character.gd" id="2_os1ox"]
+[ext_resource type="PackedScene" uid="uid://mf8vr4t6y2kb" path="res://parallax_background.tscn" id="3_uakd8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_teu0x"]
 size = Vector2(10, 10)
@@ -14,3 +15,5 @@ shape = SubResource("RectangleShape2D_teu0x")
 
 [node name="Sprite8x8Boat" type="Sprite2D" parent="."]
 texture = ExtResource("1_dhiru")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_uakd8")]
