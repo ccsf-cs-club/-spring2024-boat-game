@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvvqjdhla1ikj"]
+[gd_scene load_steps=4 format=3 uid="uid://cvvqjdhla1ikj"]
 
 [ext_resource type="PackedScene" uid="uid://be0drgbe0veus" path="res://modules/world/world.tscn" id="1_ob8n7"]
 [ext_resource type="PackedScene" uid="uid://ywhxryfusu4k" path="res://modules/character/character.tscn" id="2_2kn5s"]
+[ext_resource type="PackedScene" uid="uid://deryvbf0a4i5j" path="res://modules/Ui/Interface.tscn" id="3_p6g8i"]
 
 [node name="Main" type="Node2D"]
 
 [node name="World" parent="." instance=ExtResource("1_ob8n7")]
 
 [node name="Player" parent="." instance=ExtResource("2_2kn5s")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+
+[node name="Interface" parent="Player" instance=ExtResource("3_p6g8i")]
+player_path = NodePath("..")
