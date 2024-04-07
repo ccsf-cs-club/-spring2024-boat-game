@@ -1,18 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvvqjdhla1ikj"]
+[gd_scene load_steps=6 format=3 uid="uid://cvvqjdhla1ikj"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_im53j"]
 [ext_resource type="PackedScene" uid="uid://be0drgbe0veus" path="res://modules/world/world.tscn" id="1_ob8n7"]
 [ext_resource type="PackedScene" uid="uid://ywhxryfusu4k" path="res://modules/character/character.tscn" id="2_2kn5s"]
-[ext_resource type="PackedScene" uid="uid://deryvbf0a4i5j" path="res://modules/Ui/Interface.tscn" id="3_p6g8i"]
+[ext_resource type="PackedScene" uid="uid://casv2qyfo6qpy" path="res://modules/ui/ui.tscn" id="2_i8tir"]
+[ext_resource type="PackedScene" uid="uid://mf8vr4t6y2kb" path="res://modules/background/parallax_background.tscn" id="4_wn142"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "ui")]
+script = ExtResource("1_im53j")
+player = NodePath("Player")
+ui = NodePath("Player/Camera2D/UI")
 
 [node name="World" parent="." instance=ExtResource("1_ob8n7")]
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_wn142")]
+
 [node name="Player" parent="." instance=ExtResource("2_2kn5s")]
-unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
 
-[node name="Interface" parent="Player" instance=ExtResource("3_p6g8i")]
-player_path = NodePath("..")
+[node name="UI" parent="Player/Camera2D" instance=ExtResource("2_i8tir")]

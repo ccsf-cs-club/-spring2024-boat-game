@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 signal speed_change(new_speed)
 
@@ -23,7 +24,7 @@ func read_input():
 		acceleration += 1
 		inputDirection = Vector2(0, -1)
 	else:
-		acceleration -= 0.005
+		acceleration -= 0.05
 	
 	if Input.is_action_pressed("down"):
 		acceleration -= 3
@@ -44,7 +45,7 @@ func read_input():
 	velocity.x = direction.x * acceleration
 	velocity.y = direction.y * acceleration
 	
-	speed_change.emit(velocity.angle())
+	speed_change.emit(velocity.length())
 
 	#print(direction, "\t", acceleration, "\t\t", velocity, "\t", theta)
 # Called 60 times per sec (set in settings)
