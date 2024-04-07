@@ -6,20 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://casv2qyfo6qpy" path="res://modules/ui/ui.tscn" id="2_i8tir"]
 [ext_resource type="PackedScene" uid="uid://mf8vr4t6y2kb" path="res://modules/background/parallax_background.tscn" id="4_wn142"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "ui")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "ui", "world")]
 script = ExtResource("1_im53j")
-player = NodePath("Player")
-ui = NodePath("Player/Camera2D/UI")
+player = NodePath("World/Player")
+ui = NodePath("World/Player/Camera2D/UI")
+world = NodePath("World")
 
 [node name="World" parent="." instance=ExtResource("1_ob8n7")]
-visible = false
+layer_0/tile_data = PackedInt32Array()
+
+[node name="Player" parent="World" instance=ExtResource("2_2kn5s")]
+
+[node name="Camera2D" type="Camera2D" parent="World/Player"]
+zoom = Vector2(4, 4)
+
+[node name="UI" parent="World/Player/Camera2D" instance=ExtResource("2_i8tir")]
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_wn142")]
 visible = false
-
-[node name="Player" parent="." instance=ExtResource("2_2kn5s")]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
-
-[node name="UI" parent="Player/Camera2D" instance=ExtResource("2_i8tir")]

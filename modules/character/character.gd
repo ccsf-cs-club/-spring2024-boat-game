@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 signal speed_change(new_speed)
+signal position_change(position)
 
 # velocity is a default internal variable
 var acceleration = 0
@@ -46,6 +47,8 @@ func read_input():
 	velocity.y = direction.y * acceleration
 	
 	speed_change.emit(velocity.length())
+	print(position)
+	position_change.emit(position)
 
 	#print(direction, "\t", acceleration, "\t\t", velocity, "\t", theta)
 # Called 60 times per sec (set in settings)
