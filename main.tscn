@@ -13,12 +13,11 @@ ui = NodePath("World/Player/Camera2D/UI")
 world = NodePath("World")
 
 [node name="World" parent="." instance=ExtResource("1_ob8n7")]
-layer_0/tile_data = PackedInt32Array()
 
 [node name="Player" parent="World" instance=ExtResource("2_2kn5s")]
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 
 [node name="UI" parent="World/Player/Camera2D" instance=ExtResource("2_i8tir")]
 
