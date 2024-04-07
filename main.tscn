@@ -12,8 +12,10 @@ player = NodePath("Player")
 ui = NodePath("Player/Camera2D/UI")
 
 [node name="World" parent="." instance=ExtResource("1_ob8n7")]
+visible = false
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_wn142")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_2kn5s")]
 
