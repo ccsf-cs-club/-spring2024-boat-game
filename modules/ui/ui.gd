@@ -12,7 +12,8 @@ var speed = 0:
 	set(new_speed):
 		speed = new_speed
 		_update_speed_label()
-		var font_size = lerp(min_font_size, max_font_size, new_speed / 50.0)
+		# var font_size = lerp(min_font_size, max_font_size, new_speed / 50.0)
+		var font_size = 24
 		speed_label.add_theme_font_size_override("font_size", font_size)
 		center_text.add_theme_font_size_override("font_size", font_size)
 		

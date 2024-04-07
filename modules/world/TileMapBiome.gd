@@ -16,7 +16,6 @@ func _ready():
 	altitude.seed = randi()
 
 func _process(delta):
-	print(player_position)
 	generate_chunk(player_position)
 
 func _on_possition_change(player_pos):
@@ -24,7 +23,6 @@ func _on_possition_change(player_pos):
 	player_position = player_pos
 
 func generate_chunk(position):
-	print("chunk_generating")
 	# Position from world cords to tile cords
 	var tile_pos = local_to_map(position)
 	for x in range(width):
