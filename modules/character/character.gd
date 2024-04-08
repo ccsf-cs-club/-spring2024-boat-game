@@ -56,9 +56,13 @@ func read_input():
 func _physics_process(delta):
 	read_input()
 	
+	# Accounts for jitters in frame rate!! 
+	# velocity = velocity * delta * 60
+	
 	audio_player.volume_db = remap(velocity.length(), 0, max_speed, -8, 5)
 	
 	rotation = -1*(theta)
+	rotation = rotation * delta * 60
 	
 	# moves based on internal variable velocity, returns collision
 	var collided = move_and_slide()
