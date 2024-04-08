@@ -7,10 +7,10 @@ signal position_change(position)
 @onready var audio_player = $AudioStreamPlayer2D
 
 # velocity is a default internal variable
-var acceleration = 0
-var max_speed = 200
-var speed = 200
-var friection = 500
+var acceleration : float = 0
+var max_speed : float = 200
+var speed : float = 200
+var friection: float = 500
 
 var theta : float = 0
 var direction : Vector2 = Vector2()
@@ -44,8 +44,11 @@ func read_input():
 	direction.x = cos(theta)
 	direction.y = -1*sin(theta)
 	
-	velocity.x = direction.x * acceleration
-	velocity.y = direction.y * acceleration
+	#velocity.x = direction.x * acceleration
+	#velocity.y = direction.y * acceleration
+	
+	# Equivalent!!
+	velocity = direction * acceleration
 	
 	speed_change.emit(velocity.length())
 	position_change.emit(position)
@@ -61,10 +64,13 @@ func _physics_process(delta):
 	
 	audio_player.volume_db = remap(velocity.length(), 0, max_speed, -8, 5)
 	
-	rotation = -1*(theta)
-	rotation = rotation * delta * 60
+	rotation = -theta * delta * 60
 	
 	# moves based on internal variable velocity, returns collision
 	var collided = move_and_slide()
 	if collided:
 		print("collided!!!")
+		
+
+
+# Add clouds!!!

@@ -89,9 +89,11 @@ func generate_chunk(chunk_key):
 			# y axis is temperature, x axis is moisture (on graph)
 			# https://youtu.be/ztPbGyQnKPo?si=H_cgn_uB94nIt6oA&t=962
 			
-			var alt_index = clamp(round((alt + 10) / 5), 0, 3)
-			var temp_index = clamp(round((temp + 10) / 5), 0, 3)
-			var moist_index = clamp(round((moist + 10) / 5), 0, 3)
+			# Infered type := is type of right hand side (so int)
+			# var alt_index := clampi(round((alt + 10) / 5), 0, 3)
+			
+			var temp_index := clampi(round((temp + 10) / 5), 0, 3)
+			var moist_index := clampi(round((moist + 10) / 5), 0, 3)
 			
 			if alt < 2:
 				set_cell(0, Vector2i(gen_x, gen_y), 1, Vector2(3, temp_index))

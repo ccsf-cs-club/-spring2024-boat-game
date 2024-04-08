@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvvqjdhla1ikj"]
+[gd_scene load_steps=5 format=3 uid="uid://cvvqjdhla1ikj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_im53j"]
 [ext_resource type="PackedScene" uid="uid://be0drgbe0veus" path="res://modules/world/world.tscn" id="1_ob8n7"]
 [ext_resource type="PackedScene" uid="uid://ywhxryfusu4k" path="res://modules/character/character.tscn" id="2_2kn5s"]
 [ext_resource type="PackedScene" uid="uid://casv2qyfo6qpy" path="res://modules/ui/ui.tscn" id="2_i8tir"]
-[ext_resource type="PackedScene" uid="uid://mf8vr4t6y2kb" path="res://modules/background/parallax_background.tscn" id="4_wn142"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player", "ui", "world")]
 script = ExtResource("1_im53j")
@@ -18,10 +17,6 @@ layer_0/modulate = Color(0.458824, 0.458824, 0.458824, 1)
 [node name="Player" parent="World" instance=ExtResource("2_2kn5s")]
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
-ignore_rotation = false
 zoom = Vector2(4, 4)
 
 [node name="UI" parent="World/Player/Camera2D" instance=ExtResource("2_i8tir")]
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("4_wn142")]
-visible = false
