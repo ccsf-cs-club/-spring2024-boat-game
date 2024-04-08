@@ -56,7 +56,7 @@ func read_input():
 func _physics_process(delta):
 	read_input()
 	
-	audio_player.volume_db = remap(velocity.length(), 0, max_speed, -10, 5)
+	audio_player.volume_db = remap(velocity.length(), 0, max_speed, -8, 5)
 	
 	rotation = -1*(theta)
 	
