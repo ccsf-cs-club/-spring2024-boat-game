@@ -5,7 +5,7 @@
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_2xckf")
 
-[node name="Control" type="Control" parent="."]
+[node name="Gui" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="Gui"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,26 +25,26 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Gui/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Gui/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Speed" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Speed" type="Label" parent="Gui/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Gui/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Gui/MarginContainer/VBoxContainer2"]
 layout_mode = 2
 alignment = 1
 
-[node name="CenterText" type="Label" parent="Control/MarginContainer/VBoxContainer2/HBoxContainer"]
+[node name="CenterText" type="Label" parent="Gui/MarginContainer/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Boat Game"
