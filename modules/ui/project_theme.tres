@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://xo4y7dhk0ctx"]
+
+[ext_resource type="FontFile" uid="uid://c2qn1wgstk3s5" path="res://FontRoboto/Roboto-Light.ttf" id="1_0o1ya"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5g6on"]
+
+[resource]
+default_font = ExtResource("1_0o1ya")
+default_font_size = 24
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_5g6on")
