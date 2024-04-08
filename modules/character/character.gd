@@ -62,4 +62,5 @@ func _physics_process(delta):
 	
 	# moves based on internal variable velocity, returns collision
 	var collided = move_and_slide()
-	
+	if collided:
+		print("collided!!!")
