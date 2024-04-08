@@ -4,28 +4,25 @@ class_name UI
 @onready var speed_label = %Speed
 @onready var center_text = %CenterText
 
-@onready var min_font_size = 10
-@onready var max_font_size = 20
+@onready var min_font_size = 12.0
+@onready var max_font_size = 15.0
 
+var font = load("res://FontRoboto/Roboto-Light.ttf")
 
 var speed = 0:
 	set(new_speed):
 		speed = new_speed
 		_update_speed_label()
-		var font_size = lerp(min_font_size, max_font_size, new_speed / 50.0)
-		# var font_size = 24
+		# var font_size = lerp(min_font_size, max_font_size, new_speed / 50.0)
+		
+		var font_size = 24
 		speed_label.add_theme_font_size_override("font_size", font_size)
 		center_text.add_theme_font_size_override("font_size", font_size)
-		
-		
-		
 
 func _ready():
-	speed_label.add_theme_font_override("font",load("res://FontRoboto/Roboto-Black.ttf"))
-	center_text.add_theme_font_override("font",load("res://FontRoboto/Roboto-Black.ttf"))
+	speed_label.add_theme_font_override("font", font)
+	center_text.add_theme_font_override("font", font)
 	_update_speed_label()
-	
-	
 
 func _update_speed_label():
 	speed_label.text = "%.f" % speed

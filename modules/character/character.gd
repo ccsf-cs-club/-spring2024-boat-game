@@ -4,6 +4,8 @@ class_name Player
 signal speed_change(new_speed)
 signal position_change(position)
 
+@onready var audio_player = $AudioStreamPlayer2D
+
 # velocity is a default internal variable
 var acceleration = 0
 var max_speed = 200
@@ -14,7 +16,6 @@ var theta : float = 0
 var direction : Vector2 = Vector2()
 
 var inputDirection : Vector2 = Vector2()
-
 
 func read_input():
 	# Makes you stop after moving!
@@ -54,6 +55,8 @@ func read_input():
 # Accurate
 func _physics_process(delta):
 	read_input()
+	
+	audio_player.volume_db = remap(velocity.length(), 0, max_speed, -10, 5)
 	
 	rotation = -1*(theta)
 	
