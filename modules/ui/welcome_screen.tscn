@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://xo4y7dhk0ctx" path="res://modules/ui/project_theme.tres" id="1_cxhr1"]
 [ext_resource type="Script" path="res://modules/ui/welcome_screen.gd" id="2_ilji8"]
 
-[node name="WelcomeScreen" type="Control" node_paths=PackedStringArray("main_menu", "settings")]
+[node name="WelcomeScreen" type="Control" node_paths=PackedStringArray("main_menu", "settings", "ambient_slider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,8 @@ theme = ExtResource("1_cxhr1")
 script = ExtResource("2_ilji8")
 main_menu = NodePath("Panel/Main Menu")
 settings = NodePath("Panel/Settings")
+ambient_slider = NodePath("Panel/Settings/HBoxContainer/Ambient Volume")
+bus_name = "Master"
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -83,7 +85,9 @@ text = "Ambient Volume"
 
 [node name="Ambient Volume" type="HSlider" parent="Panel/Settings/HBoxContainer"]
 layout_mode = 2
-value = 100.0
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [connection signal="button_up" from="Panel/Main Menu/Start Game" to="." method="_on_start_game_button_up"]
 [connection signal="button_up" from="Panel/Main Menu/Settings" to="." method="_on_settings_button_up"]
