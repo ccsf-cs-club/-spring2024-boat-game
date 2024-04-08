@@ -1,7 +1,7 @@
 extends TileMap
 class_name World
 
-var chunk_size = Vector2(32, 32)
+var chunk_size = Vector2(16,16)
 var loaded_chunks = {} # dictionary
 
 var moisture = FastNoiseLite.new()
@@ -16,6 +16,7 @@ func _on_possition_change(player_pos):
 	player_position = player_pos
 
 func _ready():
+	
 	moisture.seed = randi()
 	temperature.seed = randi()
 	altitude.seed = randi()

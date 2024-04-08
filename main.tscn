@@ -17,9 +17,12 @@ world = NodePath("World")
 layer_0/modulate = Color(0.458824, 0.458824, 0.458824, 1)
 
 [node name="Player" parent="World" instance=ExtResource("2_2kn5s")]
+platform_floor_layers = 4294901760
+platform_wall_layers = 0
 
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
 zoom = Vector2(4, 4)
+process_callback = 0
 position_smoothing_enabled = true
 
 [node name="UI" parent="." instance=ExtResource("2_i8tir")]
