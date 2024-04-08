@@ -62,7 +62,7 @@ func _physics_process(delta):
 	audio_player.volume_db = remap(velocity.length(), 0, max_speed, -8, 5)
 	
 	# Accounts for jitters in frame rate!! 
-	velocity = velocity * delta * 60
+	# velocity = velocity * delta * 60 (Already implimented)
 	rotation = -theta * delta * 60
 	
 	# moves based on internal variable velocity, returns collision
