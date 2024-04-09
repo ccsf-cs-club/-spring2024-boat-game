@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvvqjdhla1ikj"]
+[gd_scene load_steps=8 format=3 uid="uid://cvvqjdhla1ikj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_im53j"]
 [ext_resource type="PackedScene" uid="uid://be0drgbe0veus" path="res://modules/world/world.tscn" id="1_ob8n7"]
 [ext_resource type="PackedScene" uid="uid://ywhxryfusu4k" path="res://modules/character/character.tscn" id="2_2kn5s"]
 [ext_resource type="PackedScene" uid="uid://casv2qyfo6qpy" path="res://modules/ui/ui.tscn" id="2_i8tir"]
 [ext_resource type="PackedScene" uid="uid://br65xd06u0yyl" path="res://modules/music/track.tscn" id="2_vrj3q"]
+[ext_resource type="Script" path="res://modules/Camera/Camera2D.gd" id="5_lmds0"]
 [ext_resource type="PackedScene" uid="uid://bvfssc2jdpmwp" path="res://modules/ui/welcome_screen.tscn" id="5_xi2or"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player", "ui", "world")]
@@ -25,6 +26,7 @@ platform_wall_layers = 0
 [node name="Camera2D" type="Camera2D" parent="World/Player"]
 zoom = Vector2(4, 4)
 process_callback = 0
+script = ExtResource("5_lmds0")
 
 [node name="UI" parent="." instance=ExtResource("2_i8tir")]
 
