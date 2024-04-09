@@ -23,5 +23,4 @@ func _input(event:InputEvent):
 		base_width *= 1.1
 	
 	adjust_camera_zoom()
-	get_viewport().size_changed.connect(adjust_camera_zoom)
 
