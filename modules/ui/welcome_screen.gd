@@ -19,6 +19,7 @@ func _on_ambient_value_changed(value):
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
 
 func _on_start_game_button_up():
+	player.position = Vector2(0, 0)
 	visible = false
 
 
@@ -39,7 +40,9 @@ func _on_spin_camera_pressed():
 
 func _input(event:InputEvent)->void:
 	print("input called!")
-	if Input.is_action_pressed("openSettings"):
+	# checks just this frame
+	if Input.is_action_just_pressed("openSettings"):
 		print("Raaa")
-		main_menu.visible = !main_menu.visible
-		settings.visible = !settings.visible
+		main_menu.visible = false
+		visible = !visible
+		settings.visible = true
