@@ -76,27 +76,27 @@ text = "Smooth Camera"
 [node name="Smooth Camera" type="CheckButton" parent="Panel/MarginContainer/Settings/HBoxContainer3"]
 layout_mode = 2
 
-[node name="HBoxContainer4" type="VBoxContainer" parent="Panel/MarginContainer/Settings"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/Settings/HBoxContainer4"]
-layout_mode = 2
-text = "Music Volume"
-
-[node name="Music Volume" type="HSlider" parent="Panel/MarginContainer/Settings/HBoxContainer4"]
-layout_mode = 2
-max_value = 1.0
-step = 0.01
-value = 1.0
-
 [node name="HBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Settings"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/Settings/HBoxContainer"]
 layout_mode = 2
+text = "Music Volume"
+
+[node name="Music Volume" type="HSlider" parent="Panel/MarginContainer/Settings/HBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer4" type="VBoxContainer" parent="Panel/MarginContainer/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Settings/HBoxContainer4"]
+layout_mode = 2
 text = "Ambient Volume"
 
-[node name="Ambient Volume" type="HSlider" parent="Panel/MarginContainer/Settings/HBoxContainer"]
+[node name="Ambient Volume" type="HSlider" parent="Panel/MarginContainer/Settings/HBoxContainer4"]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
@@ -107,5 +107,5 @@ value = 1.0
 [connection signal="button_up" from="Panel/MarginContainer/Settings/Button" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="Panel/MarginContainer/Settings/HBoxContainer2/Spin Camera" to="." method="_on_spin_camera_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/Settings/HBoxContainer3/Smooth Camera" to="." method="_on_smooth_camera_pressed"]
-[connection signal="value_changed" from="Panel/MarginContainer/Settings/HBoxContainer4/Music Volume" to="." method="_on_ambient_value_changed"]
-[connection signal="value_changed" from="Panel/MarginContainer/Settings/HBoxContainer/Ambient Volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="Panel/MarginContainer/Settings/HBoxContainer/Music Volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="Panel/MarginContainer/Settings/HBoxContainer4/Ambient Volume" to="." method="_on_ambient_value_changed"]
