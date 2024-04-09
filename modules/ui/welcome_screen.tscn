@@ -67,6 +67,17 @@ text = "Camera Spin"
 [node name="Spin Camera" type="CheckButton" parent="Panel/MarginContainer/Settings/HBoxContainer2"]
 layout_mode = 2
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/MarginContainer/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Settings/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Smooth Camera"
+
+[node name="Smooth Camera" type="CheckButton" parent="Panel/MarginContainer/Settings/HBoxContainer3"]
+layout_mode = 2
+
 [node name="HBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Settings"]
 layout_mode = 2
 
@@ -84,4 +95,5 @@ value = 1.0
 [connection signal="button_up" from="Panel/MarginContainer/Main Menu/Settings" to="." method="_on_settings_button_up"]
 [connection signal="button_up" from="Panel/MarginContainer/Settings/Button" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="Panel/MarginContainer/Settings/HBoxContainer2/Spin Camera" to="." method="_on_spin_camera_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/Settings/HBoxContainer3/Smooth Camera" to="." method="_on_smooth_camera_pressed"]
 [connection signal="value_changed" from="Panel/MarginContainer/Settings/HBoxContainer/Ambient Volume" to="." method="_on_ambient_value_changed"]

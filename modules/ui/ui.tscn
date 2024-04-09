@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://casv2qyfo6qpy"]
+[gd_scene load_steps=4 format=3 uid="uid://casv2qyfo6qpy"]
 
 [ext_resource type="Script" path="res://modules/ui/ui.gd" id="1_2xckf"]
+[ext_resource type="Theme" uid="uid://xo4y7dhk0ctx" path="res://modules/ui/project_theme.tres" id="2_lgsbk"]
 [ext_resource type="PackedScene" uid="uid://bteqln1qw13p8" path="res://modules/inventory system/inventory/invenotry.tscn" id="2_na2ec"]
 
 [node name="UI" type="CanvasLayer"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_lgsbk")
 
 [node name="MarginContainer" type="MarginContainer" parent="Gui"]
 layout_mode = 1
@@ -36,6 +38,13 @@ layout_mode = 2
 [node name="Speed" type="Label" parent="Gui/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Speed {Dynamic}"
+
+[node name="DistanceTo" type="Label" parent="Gui/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Distance To"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Gui/MarginContainer"]
 layout_mode = 2

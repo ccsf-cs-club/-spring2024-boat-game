@@ -2,9 +2,11 @@ extends CharacterBody2D
 class_name Player
 
 signal speed_change(new_speed)
+signal distance_to_change(new_dist_to)
 signal position_change(position)
 
 @onready var audio_player = $AudioStreamPlayer2D
+@onready var shape_cast = $ShapeCast2D
 
 # velocity is a default internal variable
 var acceleration : float = 0
@@ -14,6 +16,8 @@ var friection: float = 500
 
 var theta : float = 0
 var direction : Vector2 = Vector2()
+
+var collision_distance : float = 0
 
 func read_input(delta):
 	# Force stringName with & [[ returns -1, 0, or 1
@@ -52,6 +56,12 @@ func _physics_process(delta):
 	
 	# Accounts for jitters in frame rate in weird camera
 	rotation = -theta * delta * 60
+	
+	var dist_to = 0
+	if shape_cast.is_colliding():
+		dist_to = global_position.distance_to(shape_cast.get_collision_point(0))
+	
+	distance_to_change.emit(dist_to)
 	
 	# moves based on internal variable velocity, returns collision
 	var collided = move_and_slide()

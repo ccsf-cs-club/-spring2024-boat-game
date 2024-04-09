@@ -36,13 +36,16 @@ func _on_button_button_up():
 func _on_spin_camera_pressed():
 	camera.ignore_rotation = !camera.ignore_rotation
 
-
+func _on_smooth_camera_pressed():
+	camera.position_smoothing_enabled = !camera.position_smoothing_enabled
 
 func _input(event:InputEvent)->void:
-	print("input called!")
 	# checks just this frame
 	if Input.is_action_just_pressed("openSettings"):
 		print("Raaa")
 		main_menu.visible = false
 		visible = !visible
 		settings.visible = true
+
+
+
