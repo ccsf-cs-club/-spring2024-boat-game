@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://br65xd06u0yyl"]
+
+[ext_resource type="AudioStream" uid="uid://phngihd4sfpp" path="res://modules/music/perfect-beauty-191271.mp3" id="1_pimuh"]
+
+[node name="Track" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_pimuh")
+volume_db = -8.0
+autoplay = true

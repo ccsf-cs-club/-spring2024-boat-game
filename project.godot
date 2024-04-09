@@ -29,6 +29,7 @@ folder_colors={
 "res://modules/character/": "red",
 "res://modules/inventory system/": "pink",
 "res://modules/inventory system/data/": "gray",
+"res://modules/music/": "purple",
 "res://modules/ui/": "teal",
 "res://modules/world/": "blue"
 }

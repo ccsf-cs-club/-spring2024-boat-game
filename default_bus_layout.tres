@@ -1,3 +1,13 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://op1asciwt6u1"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://op1asciwt6u1"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_e25tl"]
+resource_name = "Reverb"
+room_size = 1.0
+damping = 0.28
+hipass = 0.25
+dry = 0.79
+wet = 0.73
 
 [resource]
+bus/0/effect/0/effect = SubResource("AudioEffectReverb_e25tl")
+bus/0/effect/0/enabled = true
