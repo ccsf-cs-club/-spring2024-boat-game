@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvfssc2jdpmwp"]
+[gd_scene load_steps=2 format=3 uid="uid://bvfssc2jdpmwp"]
 
-[ext_resource type="Theme" uid="uid://xo4y7dhk0ctx" path="res://modules/ui/project_theme.tres" id="1_cxhr1"]
 [ext_resource type="Script" path="res://modules/ui/welcome_screen.gd" id="2_ilji8"]
 
 [node name="WelcomeScreen" type="Control" node_paths=PackedStringArray("main_menu", "settings", "ambient_slider")]
@@ -10,14 +9,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_cxhr1")
 script = ExtResource("2_ilji8")
-main_menu = NodePath("Panel/Main Menu")
-settings = NodePath("Panel/Settings")
-ambient_slider = NodePath("Panel/Settings/HBoxContainer/Ambient Volume")
+main_menu = NodePath("Panel/MarginContainer/Main Menu")
+settings = NodePath("Panel/MarginContainer/Settings")
+ambient_slider = NodePath("Panel/MarginContainer/Settings/HBoxContainer/Ambient Volume")
 bus_name = "Master"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,70 +25,63 @@ anchor_bottom = 0.5
 offset_left = -107.0
 offset_top = -75.0
 offset_right = 107.0
-offset_bottom = 75.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Main Menu" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -39.0
-offset_right = 64.0
-offset_bottom = 39.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="Start Game" type="Button" parent="Panel/Main Menu"]
+[node name="Main Menu" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Start Game" type="Button" parent="Panel/MarginContainer/Main Menu"]
 layout_mode = 2
 text = "Start Game"
 
-[node name="Settings" type="Button" parent="Panel/Main Menu"]
+[node name="Settings" type="Button" parent="Panel/MarginContainer/Main Menu"]
 layout_mode = 2
 text = "Settings"
 
-[node name="Settings" type="VBoxContainer" parent="Panel"]
+[node name="Settings" type="VBoxContainer" parent="Panel/MarginContainer"]
 visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.0
-offset_top = -49.0
-offset_right = 91.0
-offset_bottom = 49.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 
-[node name="Button" type="Button" parent="Panel/Settings"]
+[node name="Button" type="Button" parent="Panel/MarginContainer/Settings"]
 layout_mode = 2
 text = "Back"
 
-[node name="Spin Camera" type="CheckButton" parent="Panel/Settings"]
-layout_mode = 2
-text = "Spin Camera"
-
-[node name="HBoxContainer" type="VBoxContainer" parent="Panel/Settings"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/Settings"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/Settings/HBoxContainer"]
+[node name="Label" type="Label" parent="Panel/MarginContainer/Settings/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Camera Spin"
+
+[node name="Spin Camera" type="CheckButton" parent="Panel/MarginContainer/Settings/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Settings/HBoxContainer"]
 layout_mode = 2
 text = "Ambient Volume"
 
-[node name="Ambient Volume" type="HSlider" parent="Panel/Settings/HBoxContainer"]
+[node name="Ambient Volume" type="HSlider" parent="Panel/MarginContainer/Settings/HBoxContainer"]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[connection signal="button_up" from="Panel/Main Menu/Start Game" to="." method="_on_start_game_button_up"]
-[connection signal="button_up" from="Panel/Main Menu/Settings" to="." method="_on_settings_button_up"]
-[connection signal="button_up" from="Panel/Settings/Button" to="." method="_on_button_button_up"]
-[connection signal="pressed" from="Panel/Settings/Spin Camera" to="." method="_on_spin_camera_pressed"]
-[connection signal="value_changed" from="Panel/Settings/HBoxContainer/Ambient Volume" to="." method="_on_ambient_volume_value_changed"]
+[connection signal="button_up" from="Panel/MarginContainer/Main Menu/Start Game" to="." method="_on_start_game_button_up"]
+[connection signal="button_up" from="Panel/MarginContainer/Main Menu/Settings" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="Panel/MarginContainer/Settings/Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Panel/MarginContainer/Settings/HBoxContainer2/Spin Camera" to="." method="_on_spin_camera_pressed"]
+[connection signal="value_changed" from="Panel/MarginContainer/Settings/HBoxContainer/Ambient Volume" to="." method="_on_ambient_value_changed"]
