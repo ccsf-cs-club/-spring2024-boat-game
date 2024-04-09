@@ -3,10 +3,12 @@ class_name Main
 
 @export var player: Player
 @export var ui: UI
+@export var menu: WelcomeScreen
 @export var world: World
 
 func _ready():
 	player.toggle_inventory.connect(toggle_inventory_interface)
+	menu.toggle_menu.connect(toggle_menu_happened)
 	ui.inventory_interface.set_player_inventory_data(player.inventory_data)
 	
 	
@@ -24,7 +26,18 @@ func toggle_inventory_interface() -> void:
 	ui.inventory_interface.visible = not ui.inventory_interface.visible
 	if ui.inventory_interface.visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	else:
+	elif not menu.visible:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func toggle_menu_happened() -> void:
+	print("Raaa")
+	menu.main_menu.visible = false
+	menu.visible = not menu.visible
+	menu.settings.visible = true
+	
+	if menu.visible:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	elif not ui.inventory_interface.visible:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 # F1 is search documentation!!! (Class, methods, properties)

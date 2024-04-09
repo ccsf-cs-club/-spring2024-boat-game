@@ -9,10 +9,11 @@
 [ext_resource type="Resource" uid="uid://dcdnahqj4xqpb" path="res://modules/inventory system/test_inv.tres" id="5_tsjv8"]
 [ext_resource type="PackedScene" uid="uid://bvfssc2jdpmwp" path="res://modules/ui/welcome_screen.tscn" id="5_xi2or"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "ui", "world")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player", "ui", "menu", "world")]
 script = ExtResource("1_im53j")
 player = NodePath("World/Player")
 ui = NodePath("UI")
+menu = NodePath("Menu/WelcomeScreen")
 world = NodePath("World")
 
 [node name="Track" parent="." instance=ExtResource("2_vrj3q")]

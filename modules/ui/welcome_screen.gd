@@ -10,6 +10,8 @@ class_name WelcomeScreen
 @export var music_bus_name: String = "Music"
 @export var ambient_bus_name: String = "Ambient"
 
+signal toggle_menu()
+
 var music_bus_index: int
 var ambient_bus_index: int
 
@@ -51,9 +53,6 @@ func _on_smooth_camera_pressed():
 func _input(event:InputEvent)->void:
 	# checks just this frame
 	if Input.is_action_just_pressed("openSettings"):
-		print("Raaa")
-		main_menu.visible = false
-		visible = !visible
-		settings.visible = true
+		toggle_menu.emit()
 
 
