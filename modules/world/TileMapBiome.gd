@@ -1,6 +1,8 @@
 extends TileMap
 class_name World
 
+@export var camera : MyCamera
+
 var chunk_size = Vector2(16,16)
 var loaded_chunks = {} # dictionary
 

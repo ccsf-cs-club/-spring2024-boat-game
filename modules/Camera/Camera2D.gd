@@ -1,4 +1,5 @@
 extends Camera2D
+class_name MyCamera
 
 @export var base_width : float = 1920
 
