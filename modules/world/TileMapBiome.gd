@@ -1,6 +1,8 @@
 extends TileMap
 class_name World
 
+@export var camera : Camera
+
 var chunk_size = Vector2(16,16)
 var loaded_chunks = {} # dictionary
 
@@ -34,9 +36,11 @@ func world_to_chunk_position(world_pos):
 		floor(world_pos.y / (chunk_size.y * cell_size)))
 
 func load_chunks_around(chunk_pos):
+	#var side_length = floor(3 * 1920 / camera.base_width)
+	var side_length = 2 * (camera.base_width / 1920)
 	# Load the chunk that the player is in and the surrounding ones
-	for x in range(chunk_pos.x -2, chunk_pos.x + 3):
-		for y in range(chunk_pos.y -2, chunk_pos.y + 3):
+	for x in range(chunk_pos.x - side_length, chunk_pos.x + side_length + 1):
+		for y in range(chunk_pos.y - side_length, chunk_pos.y + side_length + 1):
 			var chunk_key = Vector2(x, y)
 			if not loaded_chunks.has(chunk_key):
 				load_chunk(chunk_key)
@@ -48,7 +52,7 @@ func load_chunk(chunk_key):
 
 func unload_distant_chunks(current_chunk):
 	# Go through the loaded_chunks and unload any that are too far from the current_chunk
-	var unload_distance = 3 # Number of chunks away to start unloading
+	var unload_distance = 3 * (camera.base_width / 1920) # Number of chunks away to start unloading
 	var keys_to_unload = []
 	for key in loaded_chunks.keys():
 		if key.distance_to(current_chunk) > unload_distance:
