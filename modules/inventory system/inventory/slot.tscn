@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuwllbukydsca"]
 
-[ext_resource type="Texture2D" uid="uid://kesiol37bxce" path="res://modules/inventory system/item_atlas.tres" id="1_eq0pi"]
-[ext_resource type="FontFile" uid="uid://c2qn1wgstk3s5" path="res://FontRoboto/Roboto-Light.ttf" id="2_vjspc"]
+[ext_resource type="Texture2D" uid="uid://kesiol37bxce" path="res://modules/inventory system/item/item_atlas.tres" id="1_eq0pi"]
+[ext_resource type="FontFile" uid="uid://c2qn1wgstk3s5" path="res://assets/FontRoboto/Roboto-Light.ttf" id="2_vjspc"]
 
 [node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(64, 64)

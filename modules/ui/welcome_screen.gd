@@ -5,18 +5,25 @@ class_name WelcomeScreen
 @export var settings : VBoxContainer
 @export var player : Player
 @export var camera : Camera2D
-@export var ambient_slider : HSlider
 
 
-@export var bus_name: String = "music"
-var bus_index: int
+@export var music_bus_name: String = "Music"
+@export var ambient_bus_name: String = "Ambient"
+
+var music_bus_index: int
+var ambient_bus_index: int
+
 
 
 func _read():
-	bus_index = AudioServer.get_bus_index(bus_name)
+	music_bus_index = AudioServer.get_bus_index(music_bus_name)
+	ambient_bus_index = AudioServer.get_bus_index(ambient_bus_name)	
+
+func _on_music_volume_value_changed(value):
+	AudioServer.set_bus_volume_db(music_bus_index, linear_to_db(value))
 
 func _on_ambient_value_changed(value):
-	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+	AudioServer.set_bus_volume_db(ambient_bus_index, linear_to_db(value))
 
 func _on_start_game_button_up():
 	player.position = Vector2(0, 0)
@@ -46,6 +53,5 @@ func _input(event:InputEvent)->void:
 		main_menu.visible = false
 		visible = !visible
 		settings.visible = true
-
 
 

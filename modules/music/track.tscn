@@ -1,10 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://br65xd06u0yyl"]
+[gd_scene load_steps=5 format=3 uid="uid://br65xd06u0yyl"]
 
+[ext_resource type="Script" path="res://modules/music/track_selector.gd" id="1_l8g8f"]
 [ext_resource type="AudioStream" uid="uid://phngihd4sfpp" path="res://modules/music/perfect-beauty-191271.mp3" id="1_pimuh"]
+[ext_resource type="AudioStream" uid="uid://vaudafo83mf3" path="res://modules/music/pirates-in-search-of-rum-pirates-epic-trailer-200229.mp3" id="3_u67bp"]
+[ext_resource type="AudioStream" uid="uid://ddw26nqvciu3t" path="res://modules/music/sunshine-jaunt-163686.mp3" id="4_sp7fu"]
 
 [node name="Track" type="Node"]
+script = ExtResource("1_l8g8f")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="perfect-beauty" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_pimuh")
 volume_db = -8.0
-autoplay = true
+bus = &"Music"
+
+[node name="pirates-in-search" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u67bp")
+volume_db = -8.0
+bus = &"Music"
+
+[node name="sunshine-jaunt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sp7fu")
+volume_db = -8.0
+bus = &"Music"

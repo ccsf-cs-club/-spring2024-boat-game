@@ -68,7 +68,7 @@ func _physics_process(delta):
 	if collided:
 		if speed >= 10.5:
 			speed -= 5
-		print("collided!!!")
+		# print("collided!!!")
 		
 
 

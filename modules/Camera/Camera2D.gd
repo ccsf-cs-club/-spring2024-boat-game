@@ -13,7 +13,7 @@ func adjust_camera_zoom():
 	var current_width : float = get_viewport().size.x
 	var zoom_factor : float = current_width / base_width
 	zoom = 4 * Vector2(zoom_factor, zoom_factor)
-	print(current_width, " ", zoom)
+	# print(current_width, " ", zoom)
 
 func _input(event:InputEvent):
 	if Input.is_action_pressed("SCROLL_UP"):

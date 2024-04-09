@@ -9,5 +9,17 @@ dry = 0.79
 wet = 0.73
 
 [resource]
-bus/0/effect/0/effect = SubResource("AudioEffectReverb_e25tl")
-bus/0/effect/0/enabled = true
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/2/name = &"Ambient"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectReverb_e25tl")
+bus/2/effect/0/enabled = true
