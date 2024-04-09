@@ -25,6 +25,7 @@ project/assembly_name="Spring2024 Boat Game"
 [file_customization]
 
 folder_colors={
+"res://modules/Camera/": "green",
 "res://modules/background/": "yellow",
 "res://modules/character/": "red",
 "res://modules/inventory system/": "pink",
