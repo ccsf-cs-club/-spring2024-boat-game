@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuwllbukydsca"]
 
-[ext_resource type="Texture2D" uid="uid://kesiol37bxce" path="res://modules/inventory system/item/item_atlas.tres" id="1_eq0pi"]
+[ext_resource type="Script" path="res://modules/inventory system/inventory/slot.gd" id="1_kwagi"]
 [ext_resource type="FontFile" uid="uid://c2qn1wgstk3s5" path="res://assets/FontRoboto/Roboto-Light.ttf" id="2_vjspc"]
 
 [node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(64, 64)
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_kwagi")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -17,11 +18,11 @@ theme_override_constants/margin_bottom = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_eq0pi")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="QuantityLabel" type="Label" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0

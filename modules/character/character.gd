@@ -1,9 +1,13 @@
 extends CharacterBody2D
 class_name Player
 
+@export var inventory_data: InventoryData
+
 signal speed_change(new_speed)
 signal distance_to_change(new_dist_to)
 signal position_change(position)
+
+signal toggle_inventory()
 
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var shape_cast = $ShapeCast2D
@@ -69,7 +73,9 @@ func _physics_process(delta):
 		if speed >= 10.5:
 			speed -= 5
 		# print("collided!!!")
-		
 
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("inventory"):
+		toggle_inventory.emit()
 
 # Add clouds!!!

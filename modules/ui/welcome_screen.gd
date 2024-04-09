@@ -18,9 +18,7 @@ var ambient_bus_index: int
 func _ready():
 	music_bus_index = AudioServer.get_bus_index(music_bus_name)
 	ambient_bus_index = AudioServer.get_bus_index(ambient_bus_name)
-	print("\n\n\n")
 	print(music_bus_index, "   ", ambient_bus_index)
-	print("\n\n\n")
 	
 
 func _on_music_volume_value_changed(value):

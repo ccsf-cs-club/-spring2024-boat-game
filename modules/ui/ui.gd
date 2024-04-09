@@ -8,7 +8,8 @@ class_name UI
 @onready var min_font_size = 12.0
 @onready var max_font_size = 15.0
 
-var font = load("res://FontRoboto/Roboto-Light.ttf")
+@onready var inventory_interface = $InventoryInterface
+
 
 var dist_to = 0:
 	set(new_dist):
@@ -26,8 +27,6 @@ var speed = 0:
 		center_text.add_theme_font_size_override("font_size", font_size)
 
 func _ready():
-	speed_label.add_theme_font_override("font", font)
-	center_text.add_theme_font_override("font", font)
 	_update_speed_label()
 
 func _update_speed_label():
