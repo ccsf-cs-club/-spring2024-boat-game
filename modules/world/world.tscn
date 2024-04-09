@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://be0drgbe0veus"]
 
 [ext_resource type="Texture2D" uid="uid://djljr1bp2g36d" path="res://modules/world/worldTileSheet4x4.png" id="2_l1fci"]
-[ext_resource type="Texture2D" uid="uid://bycsxogm3pc33" path="res://modules/world/world2TileSheet4x4.png" id="2_p11fn"]
+[ext_resource type="Texture2D" uid="uid://bycsxogm3pc33" path="res://modules/world/lowRezWorld2TileSheet4x4.png" id="2_p11fn"]
 [ext_resource type="Script" path="res://modules/world/TileMapBiome.gd" id="3_8uew3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11cpr"]

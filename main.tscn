@@ -16,9 +16,8 @@ world = NodePath("World")
 
 [node name="Track" parent="." instance=ExtResource("2_vrj3q")]
 
-[node name="World" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_ob8n7")]
+[node name="World" parent="." instance=ExtResource("1_ob8n7")]
 layer_0/modulate = Color(0.458824, 0.458824, 0.458824, 1)
-camera = NodePath("Player/Camera2D")
 
 [node name="Player" parent="World" instance=ExtResource("2_2kn5s")]
 platform_floor_layers = 4294901760
